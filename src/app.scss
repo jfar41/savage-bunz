@@ -1,0 +1,17 @@
+.app {
+    height: 100%;
+    width: 100%;
+    .header {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        max-height: 10vh;
+        width: 100%;
+        .logo {
+            // height: 100%;
+            max-width: 10vw;
+        }
+    }
+}

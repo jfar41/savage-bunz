@@ -5,12 +5,17 @@ export const About = () => {
         <div className="pages">
             <div className="about">
                 <h1>About</h1>
-                <h2>
-                DJ Savage Buns out here throwing it down hard and putting you in your feels all at once.
-                </h2>
-                <h2>
-                My name is Vivian but you can call me Viv. I am passionate about EDM, dancing, and sharing music. Follow me for music that speaks to you while you are working out, chilling, dancing or out for a walk.
-                </h2>
+                <p>
+                Savage Buns is a Los Angeles based DJ and aspiring producer. Her style bridges dubstep, bass, experimental, and melodic tracks.
+                </p>
+                <p>
+                She built a love for electronic dance music and started her journey with a simple mission: sharing a new musical language that transformed her life.
+
+                From spinning at house parties to now hosting shows, playing at clubs/bars, and warehouse parties, she continues to share heavy-hitting sound trips with her fans & friends. 
+                </p>
+                <p>
+                Call her savage. Call her buns. Just be ready to go full savage mode when she drops her bass-filled buns!
+                </p>
             </div>
         </div>
     )

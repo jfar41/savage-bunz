@@ -1,6 +1,13 @@
+// .pages {
+//     height: 100%;
+//     width: 100%;
+// everything nested in pages makes readung from dev tools an extra task
+// have .pages and respective page as side classes
+// }
 .pages {
     height: 100%;
     width: 100%;
+    // font-family: neonVampire;
     h1 {
         color: white;
         border-bottom: 5px solid purple;
@@ -14,6 +21,10 @@
         @media only screen and (max-width: 520px) {
             font-size: 20px;
         }
+    }
+    p {
+        margin: 2% 5%;
+        color: white;
     }
     .landing {
         // top: 10vh;
@@ -32,19 +43,23 @@
             height: 90vh;
             // object-fit: cover;
             box-sizing: border-box;
-            @media only screen and (max-width: 1024px) {
-                height: 70vh;
-            }
-            @media only screen and (max-width: 720px) {
-                height: 50vh;
-            }
-            @media only screen and (max-width: 520px) {
-                height: 30vh;
-            }
             img {
                 width: 100%;
                 // max-height: 90vh;
-                max-height: 100%;
+                // max-height: 100%;
+                height: 100%;
+            }
+            @media only screen and (max-width: 1024px) {
+                height: 70vh;
+            }
+            @media only screen and (max-width: 820px) {
+                height: 70vh;
+            }
+            @media only screen and (max-width: 720px) {
+                height: 40vh;
+            }
+            @media only screen and (max-width: 520px) {
+                height: 30vh;
             }
             .fade {
                 animation-name: fade;
@@ -82,9 +97,10 @@
     .about {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         background: linear-gradient(55deg, #0fb8ad 0%, #6e20d4 51%, #491fab 85%);
-
+        height: 50%;
     }
     .media {
         display: flex;
@@ -92,7 +108,7 @@
         // align-items: center;
         width: 100%;
         height: 100%;
-      
+        background: linear-gradient(55deg, #491fab 0%, #6e20df 51%, #0fb8ad 85%);
         .featured {
             display: flex;
             justify-content: center;

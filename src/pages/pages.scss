@@ -1,13 +1,7 @@
-// .pages {
-//     height: 100%;
-//     width: 100%;
-// everything nested in pages makes readung from dev tools an extra task
-// have .pages and respective page as side classes
-// }
 .pages {
     height: 100%;
     width: 100%;
-    // font-family: neonVampire;
+
     h1 {
         color: white;
         border-bottom: 5px solid purple;
@@ -27,15 +21,12 @@
         color: white;
     }
     .landing {
-        // top: 10vh;
         display: flex;
         justify-content: center;
         align-content: center;
         background-color: purple;
         position: relative;
-        // height: 100vh;
         .slideshow {
-            // position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -127,5 +118,8 @@
             justify-content: center;
             align-items: center;
         }
+    }
+    .events {
+        
     }
 }

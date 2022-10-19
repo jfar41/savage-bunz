@@ -21,11 +21,7 @@ export const Header = () => {
                     <img src={openedBtn} className="navBtn navCloseBtn" onClick={showNavBar}/>
                 </nav>
                 <img src={closedBtn} className="navBtn" onClick={showNavBar}/>
-                {/* <button className="navBtn logo" onClick={showNavBar}>
-                    <img src={closedBtn}/>
-                </button> */}
             </div>
-
             </div>
     )
 }

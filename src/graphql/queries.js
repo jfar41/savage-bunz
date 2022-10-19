@@ -5,12 +5,13 @@ export const getEvent = /* GraphQL */ `
   query GetEvent($id: ID!) {
     getEvent(id: $id) {
       id
+      address
       date
       description
-      location
       pictureStorageID
       status
       url
+      venue
       createdAt
       updatedAt
     }
@@ -25,12 +26,13 @@ export const listEvents = /* GraphQL */ `
     listEvents(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        address
         date
         description
-        location
         pictureStorageID
         status
         url
+        venue
         createdAt
         updatedAt
       }

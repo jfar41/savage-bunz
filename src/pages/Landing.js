@@ -22,7 +22,7 @@ export class Landing extends React.Component {
         this.interval = setInterval(this.loadingImg, 5000);
     }
     componentDidUpdate() {
-        console.log(this.state.imgIdx)
+        // console.log(this.state.imgIdx)
     }
     componentWillUnmount() { 
         clearInterval(this.interval)

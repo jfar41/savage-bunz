@@ -1,6 +1,6 @@
 projects:
   savagebunz:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/savagebunz/build/schema.graphql
     includes:
       - src/graphql/**/*.js
     excludes:

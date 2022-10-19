@@ -5,6 +5,7 @@ import { Landing } from "./pages/Landing";
 import { About } from './pages/About';
 import { Media } from "./pages/Media";
 import { Events } from './pages/Events';
+import { Contact } from "./pages/Contact";
 import { Footer } from './Footer';
 
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
@@ -19,6 +20,7 @@ function App() {
         <About />
         <Media />
         <Events />
+        <Contact />
         <Footer />
     </div>
   );

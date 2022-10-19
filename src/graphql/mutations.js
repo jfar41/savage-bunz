@@ -8,12 +8,13 @@ export const createEvent = /* GraphQL */ `
   ) {
     createEvent(input: $input, condition: $condition) {
       id
+      address
       date
       description
-      location
       pictureStorageID
       status
       url
+      venue
       createdAt
       updatedAt
     }
@@ -26,12 +27,13 @@ export const updateEvent = /* GraphQL */ `
   ) {
     updateEvent(input: $input, condition: $condition) {
       id
+      address
       date
       description
-      location
       pictureStorageID
       status
       url
+      venue
       createdAt
       updatedAt
     }
@@ -44,12 +46,13 @@ export const deleteEvent = /* GraphQL */ `
   ) {
     deleteEvent(input: $input, condition: $condition) {
       id
+      address
       date
       description
-      location
       pictureStorageID
       status
       url
+      venue
       createdAt
       updatedAt
     }

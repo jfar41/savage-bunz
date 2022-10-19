@@ -4,12 +4,13 @@ input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONL
 
 type Event @model {
   id: ID!
-  date: AWSDate!
+  address: String!,
+  date: AWSDate!,
   description: String,
-  location: String,
-  pictureStorageID: String
+  pictureStorageID: String,
   status: EventStatus,
-  url: AWSURL
+  url: AWSURL,
+  venue: String!
 }
 enum EventStatus {
     SOLDOUT

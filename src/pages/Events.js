@@ -4,45 +4,55 @@ import { listEvents } from "../graphql/queries";
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 
 import "./pages.scss";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaTimes } from "react-icons/fa";
 
 const initialState = {date: '', description: "", location: "", pictureStorageID: "", status: "", url: ""}
 
 const InputForm = ({formState, setInput}) => {
     return (
-        <>
-            <input
-                value={formState.date}
-                onChange={e => setInput('date', e.target.value)}
-                placeholder="Date"
-                className="input"
-            />
-            <input
-                value={formState.date}
-                onChange={e => setInput('description', e.target.value)}
-                placeholder="description"
-                className="input"
-            />
-            <input
-                value={formState.date}
-                onChange={e => setInput('location', e.target.value)}
-                placeholder="location"
-                className="input"
-            />
-            <input
-                value={formState.date}
-                onChange={e => setInput('status', e.target.value)}
-                placeholder="status"
-                className="input"
-            />
-            <input
-                value={formState.date}
-                onChange={e => setInput('url', e.target.value)}
-                placeholder="url"
-                className="input"
-            />
+        <div className="inputForm">
+            <div className="head">
+                <p><FaTimes /></p>
+            </div>
+            <div className="inputs">
+                <input
+                    value={formState.date}
+                    onChange={e => setInput('date', e.target.value)}
+                    placeholder="Date"
+                    className="input"
+                    />
+                <input
+                    value={formState.description}
+                    onChange={e => setInput('description', e.target.value)}
+                    placeholder="Description"
+                    className="input"
+                    />
+                <input
+                    value={formState.location}
+                    onChange={e => setInput('location', e.target.value)}
+                    placeholder="Location"
+                    className="input"
+                    />
+                <input
+                    value={formState.status}
+                    onChange={e => setInput('status', e.target.value)}
+                    placeholder="Status"
+                    className="input"
+                    />
+                <input
+                    value={formState.url}
+                    onChange={e => setInput('url', e.target.value)}
+                    placeholder="Url"
+                    className="input"
+                    />
 
-        </>
+            </div>
+            <div className="head">
+            <h3>Add Event</h3>
+            
+            </div>
+
+        </div>
     )
 }
 
@@ -81,7 +91,10 @@ export class Events extends React.Component {
         }
     }
     setInput = (key, value) => {
-        this.setState({formState: {...this.state.formState, [key]: value}})
+        const formState = {...this.state.formState}
+        console.log(formState)
+        formState[key] = value
+        this.setState({formState: formState})
     }
     render() {
         return (
@@ -89,9 +102,7 @@ export class Events extends React.Component {
                 <div className="events">
                     <h1>Events</h1>
                     {this.state.events.length > 0 ? <Events /> : "No EVENTS!"}
-                    <h1 className="inputForm">
-                        {this.state.addingEvent ? <InputForm formState={this.state.formState} setInput={this.setInput} />: <FaPlus />}
-                    </h1>
+                    {this.state.addingEvent ? <InputForm formState={this.state.formState} setInput={this.setInput} />: <FaPlus onClick={() => this.setState({addingEvent: !this.state.addingEvent })} className="button"/>}
                 </div>
             </div>
         )

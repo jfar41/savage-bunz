@@ -121,10 +121,60 @@
     }
     .events {
         width: 100%;
-        height: 100%;
+        height: 50vh;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: green;
+        background: url("../images/party_night.png") no-repeat;
+        background-size: 100% 100%;
+        color: white;
+        h1 {
+            margin-bottom: 50px;
+        }
+        .button {
+            margin: 50px;
+            font-size: 50px;
+        }
+        .inputForm {
+            margin: 50px;
+            width: 30%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #491fab;
+            border-radius: 10px;
+            .head {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                p {
+                    align-self: flex-end;
+                }
+            }
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .input {
+                    margin: 10px;
+                    width: 80%;
+                    background-color: #0F0D1B;
+                    border-radius: 5px;
+                    color: white;
+                }
+            }
+            @media only screen and (max-width: 720px){
+                margin: 0;
+                flex-direction: column;
+                width: 90%;
+               .inputs {
+                    flex-direction: row;
+               }
+            }
+        }
     }
 }

@@ -4,8 +4,9 @@ import React, { useRef } from "react";
 const closedBtn = require("./images/closed.png")
 const openedBtn = require("./images/opened.png")
 export const Header = (props) => {
-    const {aboutRef, mediaRef, eventsRef, socialsRef} = props
+    const {landingRef, aboutRef, mediaRef, eventsRef, socialsRef} = props
     const NAVIGATIONS_REF = {
+        "landing": landingRef,
         "about": aboutRef,
         "media": mediaRef,
         "events": eventsRef,
@@ -19,20 +20,15 @@ export const Header = (props) => {
     }
 
     const handleNavigation = (e, type) => {
-        console.log('handling')
         e.preventDefault();
-
-        // socialsRef.current.scrollIntoView({ behavior: 'smooth' })
         NAVIGATIONS_REF[type].current.scrollIntoView({block: "start", inline:"nearest", behavior: 'smooth'})
-        // const header = document.getElementById("header").getBoundingClientRect().top()
-        // console.log(header)
-        // const comp = document.getElementById(`${type}`).getBoundingClientRect().top()
-        // const y = header + comp
-        // window.scrollTo({top: y, behavior: "smooth"})
+        if (type !== "landing" && window.innerWidth <= 820) {
+            showNavBar()
+        }
     }
     return (
-        <div className="header" id="header">
-            <img src={require("./images/sb-logo.png")} className="logo"/>
+        <div className="header">
+            <img src={require("./images/sb-logo.png")} className="logo" onClick={(e) => handleNavigation(e, "landing")}/>
             <div className="nav">
                 <nav ref={navRef}>
                     <a href="/about" onClick={(e) => handleNavigation(e, "about")}>About</a>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import "./pages.scss";
 
 const LANDING_IMAGES = [
@@ -10,7 +10,7 @@ const LANDING_IMAGES = [
 ]
 const DEFAULT_IMG_IDX = 0
 
-export class Landing extends React.Component {
+class LandingComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,7 +40,7 @@ export class Landing extends React.Component {
     render() {
 
         return (
-            <div className="pages">
+            <div className="pages" ref={this.props.innerRef}>
                 <div className="landing">
                     <div className="slideshow">
                         {this.state.loading ? null : <img src={LANDING_IMAGES[this.state.imgIdx]} className="fade" />}
@@ -51,3 +51,5 @@ export class Landing extends React.Component {
         )
     }
 }
+
+export const Landing = forwardRef((props, ref) => <LandingComponent innerRef={ref}/>)

@@ -14,6 +14,7 @@ import { useRef } from 'react';
 Amplify.configure(awsExports)
 
 function App() {
+    const landingRef = useRef(null);
     const aboutRef = useRef(null);
     const mediaRef = useRef(null);
     const eventsRef = useRef(null);
@@ -22,13 +23,14 @@ function App() {
     return (
         <div className='app'>
             <Header 
+                landingRef={landingRef}
                 aboutRef={aboutRef}
                 mediaRef={mediaRef}
                 eventsRef={eventsRef}
                 socialsRef={socialsRef}
             />
 
-            <Landing />
+            <Landing ref={landingRef}/>
             <About ref={aboutRef}/>
             <Media ref={mediaRef}/>
             <Events ref={eventsRef}/>

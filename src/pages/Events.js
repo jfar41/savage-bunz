@@ -91,7 +91,6 @@ class EventsComponent extends React.Component {
         try {
             const eventData = await API.graphql(graphqlOperation(listEvents))
             const events = eventData.data.listEvents.items
-            console.log(events)
             this.setState({events}, () => console.log("Success fetching"))
         } catch (err) { console.log("error fetching events", err)}
     }
@@ -115,7 +114,7 @@ class EventsComponent extends React.Component {
     }
     render() {
         return (
-            <div ref={this.props.innerRef} className="pages" id="events">
+            <div ref={this.props.innerRef} className="pages">
                 <div className="events">
                     <h1>Events</h1>
                     {this.state.events.length > 0 ? this.state.events.map(event => <Event event={event} />) : "No EVENTS!"}

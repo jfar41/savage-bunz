@@ -1,11 +1,11 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import ReactPlayer from "react-player";
 
 const promo = require("../videos/promo.mp4")
 
-export const Media = () => {
+export const Media = forwardRef((props, ref) => {
     return (
-        <div className="pages">
+        <div ref={ref} className="pages">
             <div className="media">
                 <h1>Media</h1>
                 <div className="featured">
@@ -55,4 +55,4 @@ export const Media = () => {
             </div>
         </div>
     )
-}
+})

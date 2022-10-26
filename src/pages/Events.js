@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { forwardRef } from "react";
 import { createEvent } from "../graphql/mutations"
 import { listEvents } from "../graphql/queries";
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
@@ -7,6 +7,7 @@ import "./pages.scss";
 import { FaPlus, FaTimes } from "react-icons/fa";
 
 const initialState = {date: '', description: "", location: "", pictureStorageID: "", status: "", url: "", venue: ""}
+
 
 const InputForm = ({formState, setInput}) => {
     return (
@@ -73,7 +74,7 @@ const Event = ({event}) => {
     )
 }
 
-export class Events extends React.Component {
+class EventsComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -83,6 +84,7 @@ export class Events extends React.Component {
         }
     }
     componentDidMount() {
+        console.log("this.props", this.props)
         this.fetchEvents()
     }
     fetchEvents = async () => {
@@ -113,7 +115,7 @@ export class Events extends React.Component {
     }
     render() {
         return (
-            <div className="pages">
+            <div ref={this.props.innerRef} className="pages">
                 <div className="events">
                     <h1>Events</h1>
                     {this.state.events.length > 0 ? this.state.events.map(event => <Event event={event} />) : "No EVENTS!"}
@@ -123,6 +125,7 @@ export class Events extends React.Component {
         )
     }
 }
+export const Events = forwardRef((props, ref) => <EventsComponent innerRef={ref} />)
 
 const event = ({...event}) => {
     return (

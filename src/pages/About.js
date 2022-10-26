@@ -1,8 +1,8 @@
-import React from "react";
+import React, {forwardRef} from "react";
 
-export const About = () => {
+export const About = forwardRef((props, ref) => {
     return (
-        <div className="pages">
+        <div ref={ref} className="pages">
             <div className="about">
                 <h1>About</h1>
                 <p>
@@ -19,4 +19,4 @@ export const About = () => {
             </div>
         </div>
     )
-}
+})

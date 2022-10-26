@@ -10,6 +10,14 @@
       "StackName": "amplify-savagebunz-dev-100310",
       "StackId": "arn:aws:cloudformation:us-west-1:397523440176:stack/amplify-savagebunz-dev-100310/94e7e370-4e3d-11ed-b674-02785939f815",
       "AmplifyAppId": "da854bt01tnur"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "da854bt01tnur",
+          "type": "manual"
+        }
+      }
     }
   }
 }

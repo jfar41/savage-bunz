@@ -64,7 +64,6 @@ const InputForm = ({formState, setInput}) => {
 }
 
 const Event = ({event}) => {
-    console.log("event:", event)
     return (
         <div className="event">
             <div className="field">{event.date}</div>
@@ -84,8 +83,7 @@ class EventsComponent extends React.Component {
         }
     }
     componentDidMount() {
-        console.log("this.props", this.props)
-        this.fetchEvents()
+        this.fetchEvents();
     }
     fetchEvents = async () => {
         try {

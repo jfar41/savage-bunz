@@ -115,7 +115,7 @@ class EventsComponent extends React.Component {
     }
     render() {
         return (
-            <div ref={this.props.innerRef} className="pages">
+            <div ref={this.props.innerRef} className="pages" id="events">
                 <div className="events">
                     <h1>Events</h1>
                     {this.state.events.length > 0 ? this.state.events.map(event => <Event event={event} />) : "No EVENTS!"}

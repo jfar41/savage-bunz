@@ -27,6 +27,7 @@ function App() {
                 eventsRef={eventsRef}
                 socialsRef={socialsRef}
             />
+
             <Landing />
             <About ref={aboutRef}/>
             <Media ref={mediaRef}/>

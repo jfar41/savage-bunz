@@ -23,11 +23,15 @@ export const Header = (props) => {
         e.preventDefault();
 
         // socialsRef.current.scrollIntoView({ behavior: 'smooth' })
-        NAVIGATIONS_REF[type].current.scrollIntoView({ behavior: 'smooth'})
-        // console.log(ref)
+        NAVIGATIONS_REF[type].current.scrollIntoView({block: "start", inline:"nearest", behavior: 'smooth'})
+        // const header = document.getElementById("header").getBoundingClientRect().top()
+        // console.log(header)
+        // const comp = document.getElementById(`${type}`).getBoundingClientRect().top()
+        // const y = header + comp
+        // window.scrollTo({top: y, behavior: "smooth"})
     }
     return (
-        <div className="header">
+        <div className="header" id="header">
             <img src={require("./images/sb-logo.png")} className="logo"/>
             <div className="nav">
                 <nav ref={navRef}>

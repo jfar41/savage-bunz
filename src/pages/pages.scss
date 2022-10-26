@@ -1,12 +1,11 @@
 .pages {
     height: 100%;
     width: 100%;
-
+    scroll-margin-top: 100px;
     h1 {
         color: white;
         border-bottom: 5px solid purple;
         align-self: center;
-
     }
     h2 {
         color: white;
@@ -218,5 +217,8 @@
                 background-color: purple;
             }
         }
+    }
+    @media only screen and (max-width: 1024px) {
+        scroll-margin-top: 60px;
     }
 }
